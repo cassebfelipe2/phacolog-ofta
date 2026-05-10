@@ -10,9 +10,6 @@
 <meta name="theme-color" content="#F6F2EC">
 <link rel="manifest" href="/nse/manifest.json">
 <link rel="apple-touch-icon" href="/nse/icon-192.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -34,9 +31,9 @@
   --warn:#B8762B;--warnSoft:#F4E6CE;
   --danger:#A63A2A;--dangerSoft:#F1D9D4;
   --info:#3A5A78;--infoSoft:#DCE5EC;
-  --fontDisplay:'Fraunces','Cormorant Garamond',Georgia,serif;
+  --fontDisplay:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',system-ui,sans-serif;
   --fontUI:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display','Helvetica Neue',system-ui,sans-serif;
-  --fontMono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --fontMono:ui-monospace,'SF Mono','Menlo','Monaco',monospace;
   --r:12px;--rs:10px;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -314,7 +311,7 @@ body{font-family:var(--fontUI);background:var(--bg);color:var(--text);min-height
 .cal-modal-overlay.open .cal-modal{transform:translateY(0)}
 .cal-modal-handle{width:36px;height:4px;background:var(--border);border-radius:2px;margin:12px auto 0}
 .cal-modal-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 10px}
-.cal-modal-title{font-size:1rem;font-weight:700;color:var(--black);font-family:Georgia,serif}
+.cal-modal-title{font-size:1rem;font-weight:700;color:var(--black);font-family:var(--fontUI)}
 .cal-nav-btn{background:none;border:1.5px solid var(--border);border-radius:6px;width:30px;height:30px;cursor:pointer;font-size:0.85rem;color:var(--muted);display:flex;align-items:center;justify-content:center}
 .cal-nav-btn:active{background:var(--black);color:var(--bg);border-color:var(--black)}
 .cal-grid{padding:0 16px}
@@ -862,7 +859,7 @@ body{font-family:var(--fontUI);background:var(--bg);color:var(--text);min-height
   <div id="mapa-upload-area">
     <div class="field">
       <label>Texto do mapa cirúrgico</label>
-      <textarea id="mapa-textarea" style="min-height:160px;font-size:0.75rem;font-family:monospace;resize:vertical" placeholder="Abra o PDF do mapa → Ctrl+A → Ctrl+C → cole aqui"></textarea>
+      <textarea id="mapa-textarea" style="min-height:160px;font-size:0.75rem;font-family:var(--fontMono);resize:vertical" placeholder="Abra o PDF do mapa → Ctrl+A → Ctrl+C → cole aqui"></textarea>
     </div>
     <div style="font-size:0.68rem;color:var(--muted);margin-bottom:14px;line-height:1.5">
       Como fazer: abra o PDF → selecione tudo (Ctrl+A ou ⌘A) → copie (Ctrl+C ou ⌘C) → cole no campo acima.
@@ -2350,17 +2347,17 @@ function renderDetail(id){
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:${p.mental.obs?'12px':'0'}">
         <div style="text-align:center">
           <div style="font-size:0.58rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Confiança</div>
-          <div style="font-size:1.6rem;font-family:Georgia,serif;color:var(--black);line-height:1">${p.mental.confianca||'—'}</div>
+          <div style="font-size:1.6rem;font-family:var(--fontUI);color:var(--black);line-height:1">${p.mental.confianca||'—'}</div>
           <div style="font-size:0.58rem;color:var(--muted)">/5</div>
         </div>
         <div style="text-align:center">
           <div style="font-size:0.58rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Controle</div>
-          <div style="font-size:1.6rem;font-family:Georgia,serif;color:var(--black);line-height:1">${p.mental.controle||'—'}</div>
+          <div style="font-size:1.6rem;font-family:var(--fontUI);color:var(--black);line-height:1">${p.mental.controle||'—'}</div>
           <div style="font-size:0.58rem;color:var(--muted)">/5</div>
         </div>
         <div style="text-align:center">
           <div style="font-size:0.58rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Estresse</div>
-          <div style="font-size:1.6rem;font-family:Georgia,serif;color:var(--black);line-height:1">${p.mental.estresse||'—'}</div>
+          <div style="font-size:1.6rem;font-family:var(--fontUI);color:var(--black);line-height:1">${p.mental.estresse||'—'}</div>
           <div style="font-size:0.58rem;color:var(--muted)">/5</div>
         </div>
       </div>
